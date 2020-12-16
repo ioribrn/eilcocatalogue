@@ -40,10 +40,10 @@
                     <select class="form-control " id="field" name="field" onchange="this.form.submit()">
                         <option th:selected="${field == 'name'}" value="name">Nom</option>
                         <option th:selected="${field == 'brand'}" value="brand">Branche</option>
-                        <option th:selected="${field == 'category'}" value="category">Catégorie</option>
+                        <option th:selected="${field == 'category'}" value="category">CatÃ©gorie</option>
                         <option th:selected="${field == 'recent'}" value="recent">Date</option>
                         <option th:selected="${field == 'priceAsc'}" value="priceAsc">Prix ascendant</option>
-                        <option th:selected="${field == 'priceDesc'}" value="priceDesc">Price déscendant</option>
+                        <option th:selected="${field == 'priceDesc'}" value="priceDesc">Price dÃ©scendant</option>
                     </select>
                     <input th:name="query" th:value="${query}" hidden/>
                 </div>
@@ -52,7 +52,7 @@
             <table class="table .thead-dark table-striped"  th:object="${items}" >
                 <tr style="height:50px;">
                     <th>Article</th>
-                    <th>Catégorie</th>
+                    <th>CatÃ©gorie</th>
                     <th>Marque</th>
                     <th>Prix</th>
                    <!-- <th>Action</th>-->
@@ -101,12 +101,12 @@
                     <td th:text="${user.isEnabled()}"/>
                     <td>
                         <div class="btn-group">
-                            <a class="btn btn-outline-dark"  href="#" th:href="@{'../../admin/adminUser/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> Détails </a>
+                            <a class="btn btn-outline-dark"  href="#" th:href="@{'../../admin/adminUser/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> DÃ©tails </a>
                             <div th:if="${user.isEnabled()}">
-                                <a class="btn btn-outline-danger"  href="#" th:href="@{'../../admin/enable/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> Désactivé </a>
+                                <a class="btn btn-outline-danger"  href="#" th:href="@{'../../admin/enable/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> DÃ©sactivÃ© </a>
                             </div>
                             <div th:unless="${user.isEnabled()}">
-                                <a class="btn btn-outline-success"  href="#" th:href="@{'../../admin/enable/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> Activé </a>
+                                <a class="btn btn-outline-success"  href="#" th:href="@{'../../admin/enable/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> ActivÃ© </a>
                             </div>
                         </div>
                     </td>

@@ -12,7 +12,7 @@
         <h1 th:text="${item.name}">Nom d'article</h1>
         <hr>
         <h4 th:text="'Branche: ' + ${item.brand}">Branche</h4>
-        <h4 th:text="'Catégorie: ' + ${item.category}">Catégorie</h4>
+        <h4 th:text="'CatÃ©gorie: ' + ${item.category}">CatÃ©gorie</h4>
         <hr>
         <div class="row mx-md-n5 align-items-center">
             <div th:unless="${item.images.isEmpty()}" th:each="image : ${item.imagesPaths()}" style="width: 100%; max-width: 300px; height: 100%; max-height: 300px; margin: 4px">
@@ -73,7 +73,7 @@
                     <p class="card-text" th:text="${item.category}"></p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" th:href="@{'../item/'+${item.id}}" class="btn btn-outline-dark">Détails</a>
+                    <a href="#" th:href="@{'../item/'+${item.id}}" class="btn btn-outline-dark">DÃ©tails</a>
                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Add to cart">
                         <a class="btn btn-outline-dark" href="#" th:href="@{'../item/addToCart/'+${item.id}}" style="pointer-events: visibleStroke;" type="button">
                             <i class="fas fa-shopping-cart"></i>

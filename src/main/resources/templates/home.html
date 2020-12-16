@@ -9,7 +9,7 @@
 
     <div class="container">
         <div th:if="${checkoutSuccess}" class="alert alert-secondary" role="alert">
-            <h5 class="alert-heading"><i class="fas fa-shopping-cart"></i> Commandes reçus! </h5><br>
+            <h5 class="alert-heading"><i class="fas fa-shopping-cart"></i> Commandes reÃ§us! </h5><br>
             <h6 th:text="'Number of items: '+${checkoutSuccess2}"></h6>
             <strong><h5 th:text="'Total value: '+${checkoutSuccess}"></h5></strong>
             <hr>
@@ -24,14 +24,14 @@
 
         <form th:action="@{/sort}">
                  <div class="form-group row">
-                     <label for="field" class="col-sm-2 col-form-label"><h5>Ordonné par:</h5> </label>
+                     <label for="field" class="col-sm-2 col-form-label"><h5>OrdonnÃ© par:</h5> </label>
                      <select class="form-control col-sm-3" id="field" name="field" onchange="this.form.submit()">
                          <option th:selected="${field == 'name'}" value="name">Nom</option>
                          <option th:selected="${field == 'brand'}" value="brand">Branche</option>
-                         <option th:selected="${field == 'category'}" value="category">Catégorie</option>
+                         <option th:selected="${field == 'category'}" value="category">CatÃ©gorie</option>
                          <option th:selected="${field == 'recent'}" value="recent">Date</option>
                          <option th:selected="${field == 'priceAsc'}" value="priceAsc">Prix ascendant</option>
-                         <option th:selected="${field == 'priceDesc'}" value="priceDesc">Prix décendant</option>
+                         <option th:selected="${field == 'priceDesc'}" value="priceDesc">Prix dÃ©cendant</option>
                      </select>
                      <input th:name="query" th:value="${query}" hidden/>
                  </div>
@@ -39,7 +39,7 @@
         <hr>
         <div th:if="${items.isEmpty()}" class="alert-info">
             <h3>
-                Aucun résultat correspondant aux critères de recherche trouvé...</h3>
+                Aucun rÃ©sultat correspondant aux critÃ©res de recherche trouvÃ©...</h3>
         </div>
         <div class="row mx-md-n5">
             <div class="card" style="width: 20rem; margin: 22px;" th:each="item : ${items}">
@@ -59,7 +59,7 @@
                     <p class="card-text" th:text="${item.category}"></p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" th:href="@{'item/'+${item.id}}" class="btn btn-outline-dark">Détails</a>
+                    <a href="#" th:href="@{'item/'+${item.id}}" class="btn btn-outline-dark">DÃ©tails</a>
                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Add to cart">
                         <a class="btn btn-outline-dark" href="#" th:href="@{'item/addToCart/'+${item.id}}" style="pointer-events: visibleStroke;" type="button">
                             <i class="fas fa-shopping-cart"></i>

@@ -21,7 +21,7 @@
                                 <form class="form-signin" name="f" th:action="@{/login}" method="post">
                                     <div th:if="${param.error}" class="alert alert-danger"> Nom d'utilisateur invalide
                                     </div>
-                                    <div th:if="${param.logout}" class="alert alert-success"> Vous êtes déconnecté
+                                    <div th:if="${param.logout}" class="alert alert-success"> Vous Ã©tes deconnecte
                                     </div>
                                     <div class="form-label-group">
                                         <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="true" >
@@ -37,7 +37,7 @@
                                     <hr class="my-4">
                                 </form>
                                 <a href="/register" style="text-decoration: none">
-                                    <button class="btn btn-lg btn-outline-secondary btn-block text-uppercase"><i class="fa-sign-in mr-2"></i> Créer un compte </button>
+                                    <button class="btn btn-lg btn-outline-secondary btn-block text-uppercase"><i class="fa-sign-in mr-2"></i> CrÃ©er un compte </button>
                                 </a>
                             </div>
                        </div>
@@ -53,7 +53,7 @@
               <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                   <div class="card card-signin my-5">
                       <div class="card-body">
-                          <h5 class="card-title text-center">Création de compte</h5>
+                          <h5 class="card-title text-center">CrÃ©ation de compte</h5>
                           <form  name="r" th:action="@{/reg}" th:object="${newUser}" method="post">
                               <div class="form-label-group">
                                   <input th:field="*{username}" type="text" class="form-control" id="regusername" name="regusername" placeholder="Username" required="true" minlength="4" />
@@ -63,7 +63,7 @@
                                   <input th:field="*{email}" type="email" class="form-control" id="email" name="email" placeholder="Email address" required="true" minlength="6"/>
                               </div>
                               <hr class="my-4">
-                              <button class="btn btn-lg btn-outline-secondary btn-block text-uppercase" type="submit"> Créer </button>
+                              <button class="btn btn-lg btn-outline-secondary btn-block text-uppercase" type="submit"> CrÃ©er </button>
                           </form>
                        </div>
                    </div>

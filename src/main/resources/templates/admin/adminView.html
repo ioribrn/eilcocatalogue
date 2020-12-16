@@ -18,7 +18,7 @@
         <table class="table .thead-dark table-striped"  th:object="${item}">
             <tr style="height:50px;">
                 <th>Nom d'article</th>
-                <th>Catégorie</th>
+                <th>CatÃ©gorie</th>
                 <th>Branche</th>
                 <th>prix</th>
                 <th>Action</th>
@@ -131,7 +131,7 @@
                 <td th:text="${order.getCartItems().size()}"/>
                 <td th:text="${order.price}"/>
                 <td>
-                    <button id="show" class="btn-sm btn-outline-secondary" th:onclick="|myFunction(${order.id})|" onclick="myFunction()"> Détails </button>
+                    <button id="show" class="btn-sm btn-outline-secondary" th:onclick="|myFunction(${order.id})|" onclick="myFunction()"> DÃ©tails </button>
                 </td>
             </tr>
             <table class="table table-dark table-responsive-md" th:id="${order.id}" style="display: none;">
@@ -139,7 +139,7 @@
                     <th> Id</th>
                     <th> Nom </th>
                     <th> marque </th>
-                    <th> Quantité </th>
+                    <th> QuantitÃ© </th>
                     <th> Prix/Unit </th>
                 </tr>
                 <tr th:each="cartItem : ${order.getCartItems()}">

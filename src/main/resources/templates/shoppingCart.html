@@ -17,7 +17,7 @@
            <tr style="height:50px;">
                <th>Article</th>
                <th>Image</th>
-               <th>Quantité</th>
+               <th>QuantitÃ©</th>
                <th>Marque</th>
                <th>Prix</th>
 
@@ -58,7 +58,7 @@
                <td> <strong> <h5 th:text="${cart.calcCartPrice()}"> </h5> </strong> </td>
                <div th:if="${cart.calcCartPrice()>=0}">
                    <td>
-                       <a class="btn btn-outline-dark"  href="#" th:href="@{'order/'+ ${cart.id}}" STYLE="padding: 2px;">Vérifier
+                       <a class="btn btn-outline-dark"  href="#" th:href="@{'order/'+ ${cart.id}}" STYLE="padding: 2px;">VÃ©rifier
                        </a>
                    </td>
                </div>
