@@ -17,11 +17,11 @@
     </div>
 
     <div class="jumbotron" th:if="${items}">
-        <h2 class="col-md-3"> Items </h2>
+        <h2 class="col-md-3"> Articles </h2>
         <hr>
         <div class="row">
-            <a class="btn-outline-secondary btn col-sm" href="/admin/newItem" style="font-size: 1.5rem; margin-left: 10%; margin-right: 10%"><i class="fas fa-plus"></i> New Item </a>
-            <a class="btn-outline-secondary btn col-sm" href="/admin/users" style="font-size: 1.5rem; margin-left: 10%; margin-right: 10%" > <i class="fas fa-users"></i> Users </a>
+            <a class="btn-outline-secondary btn col-sm" href="/admin/newItem" style="font-size: 1.5rem; margin-left: 10%; margin-right: 10%"><i class="fas fa-plus"></i> Nouvel article </a>
+            <a class="btn-outline-secondary btn col-sm" href="/admin/users" style="font-size: 1.5rem; margin-left: 10%; margin-right: 10%" > <i class="fas fa-users"></i> Utilisateurs </a>
         </div>
         <hr>
         <br>
@@ -38,12 +38,12 @@
                 <div class="input-group input-group-prepend">
                     <span class="input-group-text" id="basic-addon2"><strong>Sort by:</strong></span>
                     <select class="form-control " id="field" name="field" onchange="this.form.submit()">
-                        <option th:selected="${field == 'name'}" value="name">Name</option>
-                        <option th:selected="${field == 'brand'}" value="brand">Brand</option>
-                        <option th:selected="${field == 'category'}" value="category">Category</option>
-                        <option th:selected="${field == 'recent'}" value="recent">Most recent</option>
-                        <option th:selected="${field == 'priceAsc'}" value="priceAsc">Price ascending</option>
-                        <option th:selected="${field == 'priceDesc'}" value="priceDesc">Price descending</option>
+                        <option th:selected="${field == 'name'}" value="name">Nom</option>
+                        <option th:selected="${field == 'brand'}" value="brand">Branche</option>
+                        <option th:selected="${field == 'category'}" value="category">Catégorie</option>
+                        <option th:selected="${field == 'recent'}" value="recent">Date</option>
+                        <option th:selected="${field == 'priceAsc'}" value="priceAsc">Prix ascendant</option>
+                        <option th:selected="${field == 'priceDesc'}" value="priceDesc">Price déscendant</option>
                     </select>
                     <input th:name="query" th:value="${query}" hidden/>
                 </div>
@@ -52,7 +52,7 @@
             <table class="table .thead-dark table-striped"  th:object="${items}" >
                 <tr style="height:50px;">
                     <th>Article</th>
-                    <th>CatÃ©gorie</th>
+                    <th>Catégorie</th>
                     <th>Marque</th>
                     <th>Prix</th>
                    <!-- <th>Action</th>-->
@@ -83,14 +83,14 @@
         <hr>
         <div class="row">
 
-                <a class="btn-outline-secondary btn col-sm" href="/admin/adminhome" style="font-size: 1.5rem; margin-left: 10%; margin-right: 10%"> Items </a>
+                <a class="btn-outline-secondary btn col-sm" href="/admin/adminhome" style="font-size: 1.5rem; margin-left: 10%; margin-right: 10%"> Articles </a>
         </div>
         <hr>
         <table class="table .thead-dark table-striped"  th:object="${users}" >
             <tr style="height:50px;">
                 <th>Id</th>
-                <th>Username</th>
-                <th>Total Orders</th>
+                <th>Nom d'utilisateur</th>
+                <th>Totale</th>
                 <th>Action</th>
             </tr>
             <div th:each="user : ${users}">
@@ -101,12 +101,12 @@
                     <td th:text="${user.isEnabled()}"/>
                     <td>
                         <div class="btn-group">
-                            <a class="btn btn-outline-dark"  href="#" th:href="@{'../../admin/adminUser/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> Details </a>
+                            <a class="btn btn-outline-dark"  href="#" th:href="@{'../../admin/adminUser/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> Détails </a>
                             <div th:if="${user.isEnabled()}">
-                                <a class="btn btn-outline-danger"  href="#" th:href="@{'../../admin/enable/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> Disable </a>
+                                <a class="btn btn-outline-danger"  href="#" th:href="@{'../../admin/enable/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> Désactivé </a>
                             </div>
                             <div th:unless="${user.isEnabled()}">
-                                <a class="btn btn-outline-success"  href="#" th:href="@{'../../admin/enable/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> Enable </a>
+                                <a class="btn btn-outline-success"  href="#" th:href="@{'../../admin/enable/'+ ${user.id}}" style="padding: 2px; margin-right: 4px;"> Activé </a>
                             </div>
                         </div>
                     </td>

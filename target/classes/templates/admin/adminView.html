@@ -14,13 +14,13 @@
     </div>
 
     <div th:unless="${user}" class="jumbotron" th:object="${item}">
-        <h1 class="display-4" th:text="${item.name}">Hello, world!</h1>
+        <h1 class="display-4" th:text="${item.name}">Bonjour,</h1>
         <table class="table .thead-dark table-striped"  th:object="${item}">
             <tr style="height:50px;">
-                <th>Item Name</th>
-                <th>Category</th>
-                <th>Brand</th>
-                <th>Price</th>
+                <th>Nom d'article</th>
+                <th>Catégorie</th>
+                <th>Branche</th>
+                <th>prix</th>
                 <th>Action</th>
             </tr>
             <tr>
@@ -99,10 +99,10 @@
             <hr>
             <tr style="height:50px;">
                 <th>Id</th>
-                <th>Username</th>
+                <th>Nom d'utilisateur</th>
                 <th>Email</th>
-                <th>Total orders</th>
-                <th>Last order</th>
+                <th>Totale</th>
+                <th>Dernier ordre</th>
             </tr>
             <tr>
                 <td th:text="${user.id}"/>
@@ -119,10 +119,10 @@
         <h2> Orders </h2>
         <table class="table .thead-dark table-striped" th:each="order : ${orders}">
             <tr style="height:50px;">
-                <th>Order id</th>
+                <th>Id de l'ordre</th>
                 <th>Date</th>
-                <th>Items</th>
-                <th>Value</th>
+                <th>Article</th>
+                <th>valeur</th>
                 <th>#</th>
             </tr>
             <tr>
@@ -131,7 +131,7 @@
                 <td th:text="${order.getCartItems().size()}"/>
                 <td th:text="${order.price}"/>
                 <td>
-                    <button id="show" class="btn-sm btn-outline-secondary" th:onclick="|myFunction(${order.id})|" onclick="myFunction()"> Details </button>
+                    <button id="show" class="btn-sm btn-outline-secondary" th:onclick="|myFunction(${order.id})|" onclick="myFunction()"> Détails </button>
                 </td>
             </tr>
             <table class="table table-dark table-responsive-md" th:id="${order.id}" style="display: none;">
@@ -139,8 +139,8 @@
                     <th> Id</th>
                     <th> Nom </th>
                     <th> marque </th>
-                    <th> Quantity </th>
-                    <th> Price/Unit </th>
+                    <th> Quantité </th>
+                    <th> Prix/Unit </th>
                 </tr>
                 <tr th:each="cartItem : ${order.getCartItems()}">
                     <td th:text="${cartItem.getItem().id}"></td>

@@ -9,7 +9,7 @@
     <br>
     <div class="container jumbotron">
         <div th:if="${noOrdersYet}">
-            <h2 class="jumbotron" th:text="${noOrdersYet}">Aucune commande terminÃ©e pour le moment
+            <h2 class="jumbotron" th:text="${noOrdersYet}">Aucune commande terminée pour le moment
                 ...</h2><br>
         </div>
         <div th:if="${carts}">
@@ -18,8 +18,8 @@
             <table class="table .thead-dark table-striped" style="width: 100%;" th:object="${carts}" >
                 <tr style="height:50px;">
                     <th>Date</th>
-                    <th>No. des artciles</th>
-                    <th>TerminÃ©</th>
+                    <th>No. d'artcile</th>
+                    <th>Terminée</th>
                     <th>Prix</th>
                     <th>Action</th>
                 </tr>
@@ -40,7 +40,7 @@
                             <table class="table table-striped table-dark" style="background-color: #212529">
                                 <tr style="height:50px;">
                                     <th>Article</th>
-                                    <th>QuantitÃ©</th>
+                                    <th>Quantité</th>
                                     <th>marque</th>
                                     <th>Prix</th>
                                 </tr>
@@ -53,7 +53,7 @@
                                         <td>
                                             <div style="padding: 2px">
                                                 <a class="btn btn-secondary"  href="#" th:href="@{'../../item/addToCart/'+ ${cartItem.getItem().id}}" STYLE="padding: 2px;">Ajouter au Panier</a>
-                                                <a class="btn btn-secondary"  href="#" th:href="@{'../../item/'+ ${cartItem.getItem().id}}" STYLE="padding: 2px;">Regarder le panier</a>
+                                                <a class="btn btn-secondary"  href="#" th:href="@{'../../item/'+ ${cartItem.getItem().id}}" STYLE="padding: 2px;">Voir le panier</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -75,10 +75,10 @@
         <div th:if="${order}">
             <table class="table .thead-dark table-striped" style="width: 100%;" th:object="${order}" >
                 <tr style="height:50px;">
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Brand</th>
-                    <th>Price</th>
+                    <th>Article</th>
+                    <th>Quantité</th>
+                    <th>Branche</th>
+                    <th>Prix</th>
                     <th>Action</th>
                 </tr>
                 <div th:each="cartItem : ${order.getCartItems()}">
@@ -89,14 +89,14 @@
                         <td th:text="${cartItem.getItem().price}"></td>
                         <td>
                             <div style="padding: 2px">
-                                <a class="btn btn-outline-dark"  href="#" th:href="@{'../../item/addToCart/'+ ${cartItem.getItem().id}}" STYLE="padding: 2px;">Add to cart</a>
-                                <a class="btn btn-outline-dark"  href="#" th:href="@{'../../item/'+ ${cartItem.getItem().id}}" STYLE="padding: 2px;">View item</a>
+                                <a class="btn btn-outline-dark"  href="#" th:href="@{'../../item/addToCart/'+ ${cartItem.getItem().id}}" STYLE="padding: 2px;">Ajouter au parnier</a>
+                                <a class="btn btn-outline-dark"  href="#" th:href="@{'../../item/'+ ${cartItem.getItem().id}}" STYLE="padding: 2px;">Voir le panier</a>
                             </div>
                         </td>
                     </tr>
                 </div>
                 <tr class="table-info" style="height:50px;">
-                    <td>Number of items: </td>
+                    <td>Nombre d'articles: </td>
                     <td th:text="${order.calcNumberOfItems()}"></td>
                     <td>Cart value: </td>
                     <td> <strong> <h5 th:text="${order.getPrice()}"> </h5> </strong> </td>

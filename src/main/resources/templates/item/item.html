@@ -9,10 +9,10 @@
 
 <div class="container">
     <div class="jumbotron" th:object="${item}">
-        <h1 th:text="${item.name}">Item name</h1>
+        <h1 th:text="${item.name}">Nom d'article</h1>
         <hr>
-        <h4 th:text="'Brand: ' + ${item.brand}">Brand</h4>
-        <h4 th:text="'Category: ' + ${item.category}">Category</h4>
+        <h4 th:text="'Branche: ' + ${item.brand}">Branche</h4>
+        <h4 th:text="'Catégorie: ' + ${item.category}">Catégorie</h4>
         <hr>
         <div class="row mx-md-n5 align-items-center">
             <div th:unless="${item.images.isEmpty()}" th:each="image : ${item.imagesPaths()}" style="width: 100%; max-width: 300px; height: 100%; max-height: 300px; margin: 4px">
@@ -43,7 +43,7 @@
         <hr>
         <div class="row">
             <div class="col-sm">
-                <a href="#" th:href="@{'../item/addToCart/'+${item.id}}" class="btn btn-outline-secondary"><i class="fas fa-shopping-cart" style="align-content: center"></i> Add to cart </a>
+                <a href="#" th:href="@{'../item/addToCart/'+${item.id}}" class="btn btn-outline-secondary"><i class="fas fa-shopping-cart" style="align-content: center"></i> Ajouter au panier </a>
             </div>
             <div class="col-sm-3">
                 <h3><i class="fas fa-euro-sign"></i> <span th:text="${item.getPrice()}">Prix</span></h3>
@@ -69,11 +69,11 @@
                     <img th:src="@{images/profile.png}" src="https://elcopcbonline.com/photos/product/4/176/4.jpg" alt="Item_Image" style=" width: 100%; height: 15vw;object-fit: cover;">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title" th:text="${item.brand}">Card title</h5>
+                    <h5 class="card-title" th:text="${item.brand}">Titre de panier</h5>
                     <p class="card-text" th:text="${item.category}"></p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" th:href="@{'../item/'+${item.id}}" class="btn btn-outline-dark">Details</a>
+                    <a href="#" th:href="@{'../item/'+${item.id}}" class="btn btn-outline-dark">Détails</a>
                     <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Add to cart">
                         <a class="btn btn-outline-dark" href="#" th:href="@{'../item/addToCart/'+${item.id}}" style="pointer-events: visibleStroke;" type="button">
                             <i class="fas fa-shopping-cart"></i>

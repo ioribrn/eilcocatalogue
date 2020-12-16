@@ -3,7 +3,7 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:style="http://www.w3.org/1999/xhtml" lang="en">
 
 <head th:fragment="headerfiles">
-    <title>catalogue eilco</title>
+    <title>Catalogue EILCO</title>
     <meta charset="UTF-8"/>
     <link th:href="@{~/bootstrap.min.css}" rel="stylesheet" href="bootstrap.min.css">
     <link th:href="@{~/fontawesome/css/all.css}" rel="stylesheet" href="fontawesome/css/all.css">
@@ -27,10 +27,10 @@
            </form>
            <ul class="navbar-nav ml-auto flex-nowrap">
                <li class="nav-item">
-                   <a class="nav-link m-2 menu-item nav-active" href="#" th:href="@{~/}"><i class="fa fa-home"></i>Home</a>
+                   <a class="nav-link m-2 menu-item nav-active" href="#" th:href="@{~/}"><i class="fa fa-home"></i>Accueil</a>
                </li>
                <li class="nav-item">
-                   <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link m-2 menu-item" href="#" th:href="@{~/admin/adminhome}"><i class="fas fa-toolbox"></i> Admin</a>
+                   <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link m-2 menu-item" href="#" th:href="@{~/admin/adminhome}"><i class="fas fa-toolbox"></i> Administrateur</a>
                </li>
                <li class="nav-item">
                    <a sec:authorize="hasRole('ROLE_USER')" class="nav-link m-2 menu-item" href="#" th:href="@{~/user/orderHistory}">
@@ -43,7 +43,7 @@
                    </a>
                </li>
                <li class="nav-item">
-                   <a class="nav-link m-2 menu-item" href="#">About us</a>
+                   <a class="nav-link m-2 menu-item" href="#">A propos</a>
                </li>
                <li>
                    <div class="nav-link m-2 menu-item" sec:authorize="isAuthenticated()">Bienvenue <span sec:authentication="name"><strong>Anonymous</strong></span></div>
@@ -81,10 +81,8 @@
                     <div class="col-md-6 mt-md-0 mt-3">
 
                         <!-- Content -->
-                        <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
-                            repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
-                            harum esse fugiat. Itaque, culpa?</p>
+                        <h5 class="text-uppercase font-weight-bold">Développeurs</h5>
+                        <p>MOUSTADIF Jawad && IFATSSANE Jaouad</p>
 
                     </div>
                     <!-- Grid column -->
@@ -95,10 +93,8 @@
                     <div class="col-md-6 mb-md-0 mb-3">
 
                         <!-- Content -->
-                        <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
-                            commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
-                            excepturi hic.</p>
+                        <h5 class="text-uppercase font-weight-bold">Classe</h5>
+                        <p>ING 3 - 2020/2021</p>
 
                     </div>
                     <!-- Grid column -->
@@ -111,7 +107,7 @@
 
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                <a href="#"> eilco.com</a>
+                <a href="#"> eilco.com Calais</a>
             </div>
             <!-- Copyright -->
 
