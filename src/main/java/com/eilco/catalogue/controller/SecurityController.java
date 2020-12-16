@@ -1,7 +1,6 @@
 package com.eilco.catalogue.controller;
 
 import com.eilco.catalogue.model.User;
-import com.eilco.catalogue.service.EmailService;
 import com.eilco.catalogue.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 public class SecurityController {
 
     private UserService userService;
-    private EmailService emailService;
+   // private EmailService emailService;
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -28,7 +27,7 @@ public class SecurityController {
     }
 
     @Autowired
-    public void setEmailService(EmailService emailService) { this.emailService = emailService; }
+    //public void setEmailService(EmailService emailService) { this.emailService = emailService; }
 
     @RequestMapping("login")
     public String login(){
@@ -62,7 +61,7 @@ public class SecurityController {
         switch (validData) {
             case "ok":
                 r.addFlashAttribute("userInfo", "Registration success! Please log in!");
-                emailService.sendMessage(user.getUsername(), user.getPassword());
+              //  emailService.sendMessage(user.getUsername(), user.getPassword());
                 break;
             case "wrongUsernameAndEmail":
                 model.addAttribute("userInfo", "Username already taken! Email address already registered!");
